@@ -5,8 +5,7 @@ for url in search("inurl:\"passes\" OR inurl:\"passwords\" OR inurl:\"credential
 	try:
 		r = requests.get(url)
 		parts = url.split('/')
-		index = len(parts)-1
-		filename = parts[index]
+		filename = parts[-1]
 		print 'writing %s...' %filename
 		with open('%s' % filename, 'wb')  as code:
 			code.write(r.content)
